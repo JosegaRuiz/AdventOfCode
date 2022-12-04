@@ -1,3 +1,4 @@
+# Función que transforma los inputs a listas de rango
 def getRangeToList(pair):
     ini, fin = pair.split('-')
     ini = int(ini)
@@ -8,6 +9,7 @@ def getRangeToList(pair):
     return range_result
 
 
+# Función para comprobar si un rango está totalmente contenido en otro
 def checkFullyContained(range1, range2):
     is_contained = True
     for i in range1:
@@ -16,6 +18,7 @@ def checkFullyContained(range1, range2):
     return is_contained
 
 
+# Función que comprueba si hay algún solape entre dos rangos
 def checkOverlaped(range1, range2):
     overlaped = False
     for i in range1:
@@ -24,6 +27,7 @@ def checkOverlaped(range1, range2):
     return overlaped
 
 
+# Solución a la parte 1, se cuentan los solapes completos entre todas las listas
 def totalFullyContains():
     f = open('input.txt', 'r')
     lines = f.readlines()
@@ -41,6 +45,7 @@ def totalFullyContains():
     print(total_fully_containeds)
 
 
+# Solución a la parte 2, se cuentan todos los solapes que aparecen, de cualquier tipo
 def totalOverlaps():
     f = open('input.txt', 'r')
     lines = f.readlines()
@@ -56,6 +61,7 @@ def totalOverlaps():
         elif checkOverlaped(range2, range1):
             total_overlapeds += 1
     print(total_overlapeds)
+
 
 totalFullyContains()
 totalOverlaps()
